@@ -24,18 +24,18 @@ How to run JS code without HTML.
 
 Syntax:
 
-function <functionName>(args1,arg2,...,args n){
+    function <functionName>(args1,arg2,...,args n){
 
-}
+    }
 
 Example:
 
-function test(a,b){
-    return a+b;
-}
+    function test(a,b){
+        return a+b;
+    }
 
-var result=test(10,15);
-console.log(result);
+    var result=test(10,15);
+    console.log(result);
 
 ### Function As Variable
 
@@ -43,13 +43,12 @@ Javascript allows to assign function to a variable and use it like a normal vari
 
 Example:
 
-//Example 1
-function test(a,b){
-    return a+b;
-}
+    function test(a,b){
+        return a+b;
+    }
 
-var result=test;
-console.log(result(10,15));
+    var result=test;
+    console.log(result(10,15));
 
 
 
