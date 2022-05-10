@@ -1,4 +1,6 @@
+//Example of Boolean 
 //String to Boolean conversion
+
 var a="";
 console.log(Boolean(a));
 

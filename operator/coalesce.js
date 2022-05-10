@@ -1,3 +1,4 @@
+//Example of Coalesce 
 let value ="test";
 console.log(value??"null");
 value=null;

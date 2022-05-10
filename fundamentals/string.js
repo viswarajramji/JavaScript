@@ -1,3 +1,4 @@
+//Examples of String
 var name="Shan";
 var result="my name is "+name;
 console.log(result)

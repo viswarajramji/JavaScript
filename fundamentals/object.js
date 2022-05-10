@@ -1,3 +1,5 @@
+//Example of object
+
 var object={
     name:"shan",
     age:10
@@ -7,7 +9,6 @@ console.log(object["name"]);
 console.log(object["age"]);
 console.log(object.name);
 console.log(object.age);
-
 //adding the property
 object.school="test";
 //deleting the property

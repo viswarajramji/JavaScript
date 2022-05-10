@@ -11,6 +11,15 @@ How to run JS code without HTML.
 3. Run node test.js
 4. Js output will be printed.
 
+## Points to Remember
+
+1. let vs var : let accessible is limited to only function level whereas var is used as accessible globally. 
+2. undefined vs null : undefined is the default value(ie) value does not exists whereas null is explicity set by application to clear the value.
+## Basics
+
+1. DataTypes - null ,undefined,  Number, String , Boolean, Object , BigInt 
+2. Identify type of DataType : typeof
+3. Operators: Relational , Arthematic, Comparsion , Coalesce.
 ## Functions
 
 Syntax:
@@ -45,19 +54,6 @@ console.log(result(10,15));
 
 
 
-
-
-difference between let and var
-
-
-defautl value of varible is undefined.
-
-
-Data Type	Values converted to true	Value Converted to false
-string	Any non-empty string	“” (empty string)
-number	Any Non-zero number	0, NaN
-object	Any object	null
-undefined	(not relevant)	undefined
 
 
 
