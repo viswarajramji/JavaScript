@@ -12,4 +12,3 @@ console.log(arr.pop());
 //indexof
 console.log(arr.indexOf("3"));
 console.log(arr.indexOf("30")); //-1
-
