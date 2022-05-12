@@ -101,3 +101,21 @@ Default Parameters are used to assign value to undefined parameters
     valueCallingWithUndefinedValue(10);//10
 
 
+## Class and Objects
+
+Object are a key value pair with any changes will affect the current instance only
+
+    // Object Example
+    var object={
+        firstName: "Suru",
+        lastName: "Shan",
+        getFullName:function(){
+            return this.firstName+"__"+this.lastName;
+        }
+    }
+    //Accessing Objects using both method and key values
+    console.log(object.getFullName);
+    console.log(object.getFullName());
+    console.log(object["getFullName"]());
+    console.log(object["firstName"]);
+
