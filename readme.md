@@ -23,6 +23,8 @@ How to run JS code without HTML.
 4. Control flow: if , if..else , switch case, while loop, for loop , do..while loop, forEach
 ## Functions
 
+JS uses pass by value
+
 Syntax:
 
     function <functionName>(args1,arg2,...,args n){
