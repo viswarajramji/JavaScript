@@ -50,8 +50,37 @@ Example:
     var result=test;
     console.log(result(10,15));
 
+###  Anonymous Functions
+
+Functions without names are called as Anonymous Functions.
+
+    var test=function(){
+        console.log("hello world");
+    }
+    test();
+
+    // self invoking functions
+    (function(){
+        console.log("self invoking function");
+    })()
 
 
+    //self Invoking functions with Paramets
+    var myObject={
+        _firstName: "Shan",
+        _lastName:"Micheal",
+        getName: function(){
+            return this._firstName;
+        },
+
+        getlastName:function(){
+            return this._lastName;
+        }
+    };
+
+    (function(){
+        console.log(myObject.getName()+"_"+myObject.getlastName());
+    })(myObject);
 
 
 
