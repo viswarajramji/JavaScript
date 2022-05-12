@@ -86,5 +86,18 @@ Functions without names are called as Anonymous Functions.
     })(myObject);
 
 
+### Default Parameters
+
+Default Parameters are used to assign value to undefined parameters
+
+    // values function()
+    function valueCallingWithUndefinedValue(result=10){
+        console.log(result);
+    }
+
+    valueCallingWithUndefinedValue(undefined);// 10
+    valueCallingWithUndefinedValue(null);//null
+    valueCallingWithUndefinedValue();//10
+    valueCallingWithUndefinedValue(10);//10
 
 
