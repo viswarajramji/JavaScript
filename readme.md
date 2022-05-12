@@ -198,3 +198,19 @@ Simple Class Example
     let p2=new Person("shan","test");
     console.log(p1.getFullName());
     console.log(p2.getFullName());
+
+### Object Property types - Descriptor Notes
+
+Object Descriptor to used to manage the attributes of the object
+3 methods to remember
+
+1. Object.defineProperty  - Object.defineProperty(object,property,descriptor property})
+2. Object.defineProperties  - Object.defineProperties(test,object);
+3. Object.getOwnPropertyDescriptor - Object.getOwnPropertyDescriptor(test,"Name of the property");
+
+Descriptor Property
+
+configurable - used for defining configurable (ie) cannot be deleted using del property nor this property can be modified
+enumerable - will be ignore during enumeration or iterator if set to true
+Writable - will not be allowed to be modified is set to yes
+value - value of property
