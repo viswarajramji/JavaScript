@@ -20,6 +20,7 @@ How to run JS code without HTML.
 1. DataTypes - null ,undefined,  Number, String , Boolean, Object , BigInt 
 2. Identify type of DataType : typeof
 3. Operators: Relational , Arthematic, Comparsion , Coalesce.
+4. Control flow: if , if..else , switch case, while loop, for loop , do..while loop, forEach
 ## Functions
 
 Syntax:
