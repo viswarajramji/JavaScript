@@ -160,3 +160,41 @@ The above code is repitative , so this can be avoided by constructor functions b
     arr.push(p3);
 
     arr.forEach(object=>console.log(object.firstName+"__"+object.lastName));
+
+### Prototype 
+
+used to modify the attributes of a class.
+
+    function Person(){
+        this.firstName="firstName";
+        this.lastName="lastName";
+    }
+    Person.prototype.getFullName=function()
+    {
+        return this.firstName +"__"+this.lastName;
+    }
+    var p1=new Person();
+    var p2=new Person();
+    console.log(p1.getFullName());
+    console.log(p2.getFullName());
+
+### Class 
+
+Simple Class Example 
+
+    class Person{
+        constructor(firstName,lastName){
+            this.firstName=firstName;
+            this.lastName=lastName;
+        }
+
+        getFullName(){
+            return this.firstName+"__"+this.lastName;
+        }
+    }
+
+
+    let p1=new Person("test","shan");
+    let p2=new Person("shan","test");
+    console.log(p1.getFullName());
+    console.log(p2.getFullName());
