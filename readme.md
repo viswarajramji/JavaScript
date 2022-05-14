@@ -235,3 +235,44 @@ value - value of property
     if(fullObject.hasOwnProperty(field))
       console.log(field+"_"+fullObject[field]);
 }
+
+### Object Assign
+
+Merges values and creates a new values
+
+    var sourceObj1={
+        firstName:"firstName",
+        lastName:"test"
+    }
+
+    var sourceObj2={
+        firstName:"firstName1",
+        lastName:"test1"
+    }
+
+    var value=Object.assign({},sourceObj1,sourceObj2);
+    console.log(value);
+
+### Object Optional Chaining
+
+syntax - (?.)
+
+use the operator to check null or undefined and then use the corresponding operation example:
+
+    //?. operator chaning 
+    function getUser(id){
+        if(id<=0){
+            return null;
+        }
+        return {
+            firstName:"Shan",
+            lastName:"Micheal",
+            getFullName:function(){
+                return this.firstName+"_"+this.lastName;
+            }
+        };
+    }
+
+    var user=getUser(1);
+    console.log(user?.firstName); //using user.firstName will give execption
+
