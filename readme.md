@@ -230,3 +230,8 @@ value - value of property
     for(var field in object){
         console.log(object[field])
     }
+
+    for(var field in fullObject){
+    if(fullObject.hasOwnProperty(field))
+      console.log(field+"_"+fullObject[field]);
+}
