@@ -214,3 +214,19 @@ configurable - used for defining configurable (ie) cannot be deleted using del p
 enumerable - will be ignore during enumeration or iterator if set to true
 Writable - will not be allowed to be modified is set to yes
 value - value of property
+
+### In Loop
+
+    var object={
+        firstName:"shan",
+        lastName:"Micheal"
+    };
+
+    //print object attributes
+    for(var field in object){
+        console.log(field);
+    }
+    //print object values
+    for(var field in object){
+        console.log(object[field])
+    }
