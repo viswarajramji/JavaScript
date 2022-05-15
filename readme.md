@@ -276,3 +276,40 @@ use the operator to check null or undefined and then use the corresponding opera
     var user=getUser(1);
     console.log(user?.firstName); //using user.firstName will give execption
 
+
+### Inheritance 
+
+Extending base class with additional metrics.
+
+    class Person{
+        constructor(firstName,lastName){
+            this.firstName=firstName;
+            this.lastName=lastName;
+        }
+        getFirstName(){
+            return this.firstName
+        }
+
+        getLastName(){
+            return this.getLastName;
+        }
+
+        getFullName(){
+            return this.firstName+"__"+this.getLastName;
+        }
+    }
+
+    class Profession extends Person{
+        constructor(jobRole,firstName,lastName){
+            super(firstName,lastName);
+            this.jobRole=jobRole;
+        }
+
+        printAllDetails(){
+            console.log(this.firstName+"__"+this.lastName+"__"+this.jobRole);
+        }
+    }
+
+
+    var profession =new Profession("Developer","first","last");
+    profession.printAllDetails();
