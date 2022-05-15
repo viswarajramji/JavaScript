@@ -315,7 +315,7 @@ Extending base class with additional metrics.
     profession.printAllDetails();
 
 
-## Static Method 
+### Static Method 
 
 static methods are bound to a class, not the instances of that class. Therefore, static methods are useful for defining helper or utility methods.
 
@@ -331,5 +331,18 @@ static methods are bound to a class, not the instances of that class. Therefore,
             return new Person(name);
         }
     }
-    
+
 Note: If you attempt to call the static method from an instance of the class, you’ll get an error
+
+### Static Property
+
+Like a static method, a static property is shared by all instances of a class. To define static property, you use the static keyword followed by the property name like this:
+
+    class Item {
+        static count = 0;
+        static getCount() {
+            return Item.count;
+        }
+    }
+
+    Items.getCount();//prints 0
