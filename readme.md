@@ -445,3 +445,21 @@ Apply function is called with parameter as array where call method is call as no
     //
     job.call(p1,"testRole","testDescription");
     job.call(p2,"testRole","testDescription");
+
+### Bind Function
+
+The bind() method returns a new function, when invoked, has its this sets to a specific value.
+
+    class Person{
+        constructor(firstName,lastName,age){
+            this.firstName=firstName;
+            this.lastName=lastName;
+            this.age=age;
+        }
+    }
+    function printName(age){
+        console.log(this.firstName+"__"+this.lastName+"__"+age);
+    }
+    var p1=new Person("firstName","lastName",10);
+    var p1PrintName=printName.bind(p1);
+    p1PrintName(10);
