@@ -313,3 +313,23 @@ Extending base class with additional metrics.
 
     var profession =new Profession("Developer","first","last");
     profession.printAllDetails();
+
+
+## Static Method 
+
+static methods are bound to a class, not the instances of that class. Therefore, static methods are useful for defining helper or utility methods.
+
+    class Person {
+        constructor(name) {
+            this.name = name;
+        }
+        getName() {
+            return this.name;
+        }
+        static createAnonymous(gender) {
+            let name = gender == "male" ? "John Doe" : "Jane Doe";
+            return new Person(name);
+        }
+    }
+    
+Note: If you attempt to call the static method from an instance of the class, you’ll get an error
