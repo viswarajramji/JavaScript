@@ -346,3 +346,17 @@ Like a static method, a static property is shared by all instances of a class. T
     }
 
     Items.getCount();//prints 0
+
+### Private Fields
+
+ES2022 allows you to define private fields for a class. To define a private field, you prefix the field name with the # sign.)
+
+    class Circle {
+        #radius;
+        constructor(value) {
+            this.#radius = value; //undefined && #radius will throw execption while accessing 
+        }
+        get area() {
+            return Math.PI * Math.pow(this.#radius, 2);
+        }
+    }
