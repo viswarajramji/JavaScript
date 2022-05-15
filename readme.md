@@ -506,3 +506,15 @@ syntax:  () = > expression (ie) return expression
 
 
     console.log(process((a,b)=>a+b,10,15));
+
+### Rest Parameters
+
+Can be used to send n number of parameters
+
+    function test(...args){
+    args.forEach(x=>{
+        console.log(x);
+    })
+    }
+
+    test(1,2,3,3,4);
