@@ -477,3 +477,12 @@ A closure is a function that references variables in the outer scope from its in
 
     var greet=greeting("test");
     greet(10);
+
+### Self Invoking function
+
+A self invoking function can be executed by itself
+    var result=(function(a,b){
+        return a+b;
+    })(10,15);
+
+    console.log(result);
