@@ -518,3 +518,27 @@ Can be used to send n number of parameters
     }
 
     test(1,2,3,3,4);
+
+### Call back Function
+
+Call back function are function that are passed as parameters and are invoked.
+
+    function even(number){
+        console.log(number+" is an even number");
+    }
+
+    function odd(number){
+        console.log(number+" is an odd number");
+    }
+
+    function processNumber(numbers,evenFun,oddFun){
+        numbers.forEach(element => {
+            if(element%2==0){
+                evenFun(element);
+            }else{
+                oddFun(element);
+            }
+        });
+    }
+
+    processNumber([1,2,3,4,5,6,7,8,9],even,odd);
