@@ -419,3 +419,29 @@ Call method is a way to dynamically bind a function with object
     printName.call(p1,p1.age);
     printName.call(p2,p2.age);
     printName.call(p3,p3.age);
+
+### Apply function
+
+Apply function is called with parameter as array where call method is call as normal arguments.
+
+    class Person{
+        constructor(firstName,lastName){
+            this.firstName=firstName;
+            this.lastName=lastName;
+        }
+    }
+
+    function job(jobRole,jobDescription){
+        console.log(this.firstName+"__"+this.lastName);
+        console.log(jobRole+"__"+jobDescription);
+    }
+
+    var p1=new Person("A","B");
+    var p2=new Person("C","D");
+
+    job.apply(p1,["testRole","testDescription"]);
+    job.apply(p2,["testRole","testDescription"]);
+
+    //
+    job.call(p1,"testRole","testDescription");
+    job.call(p2,"testRole","testDescription");
