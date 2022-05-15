@@ -542,3 +542,62 @@ Call back function are function that are passed as parameters and are invoked.
     }
 
     processNumber([1,2,3,4,5,6,7,8,9],even,odd);
+
+### Promise Functions
+
+a promise is an object that encapsulates the result of an asynchronous operation.
+
+A promise object has a state that can be one of the following:
+
+    Pending
+    Fulfilled with a value
+    Rejected for a reason
+
+    //Reason on to use Promise
+
+    function getUsers(){
+        var arr=[];
+        setTimeout(()=>{
+            arr=[1,2,2,4];
+        },1000);
+        return arr;
+    }
+
+    console.log(getUsers());  //print []
+
+    function getValues(callback){
+        setTimeout(()=>{
+            arr=[1,2,2,4];
+            callback(arr)
+        },1000);
+    }
+
+    function printValue(arr){
+        arr.forEach(element => {
+            console.log(element);
+        });
+    }
+    getValues(printValue); 
+
+    //using promise
+    function getPromiseValues(){
+        return new Promise((resolve,reject)=>{
+            if(true){
+                resolve();
+            }else{
+                reject();
+            }
+        });
+    }
+    var promise=getPromiseValues();
+    promise.then(function(){
+        console.log("Successfully")
+    }).catch(function(){
+        console.log("failed");
+    }).finally(function(){
+        console.log("finally");
+})
+
+
+
+
