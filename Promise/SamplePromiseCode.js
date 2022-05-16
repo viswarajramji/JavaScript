@@ -31,7 +31,7 @@
 //using promise
 function getPromiseValues(){
     return new Promise((resolve,reject)=>{
-        if(true){
+        if(false){
             resolve();
         }else{
             reject();
@@ -41,9 +41,9 @@ function getPromiseValues(){
 var promise=getPromiseValues();
 promise.then(function(){
     console.log("Successfully")
-}).catch(function(){
+},function(){
     console.log("failed");
 }).finally(function(){
-    console.log("finally");
+    console.log("success");
 })
 

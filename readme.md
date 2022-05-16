@@ -15,15 +15,79 @@ How to run JS code without HTML.
 
 1. let vs var : let accessible is limited to only function level whereas var is used as accessible globally. 
 2. undefined vs null : undefined is the default value(ie) value does not exists whereas null is explicity set by application to clear the value.
+3. Boolean Interpretation table:
+
+* String (Non-empty)  true / (Empty) false.
+* Number (Any Non zero)true / (zero) false
+* Object (non-null) true / (null) false.
+
 ## Basics
+1. Variable Declaration: let , var , cons
+2. DataTypes - null ,undefined,  Number, String , Boolean, Object , BigInt 
+3. Identify type of DataType : typeof
+4. Operators: Relational , Arthematic, Comparsion , Nullish coalescing operator .
+5. Control flow: if , if..else , switch case, while loop, for loop , do..while loop, forEach
 
-1. DataTypes - null ,undefined,  Number, String , Boolean, Object , BigInt 
-2. Identify type of DataType : typeof
-3. Operators: Relational , Arthematic, Comparsion , Coalesce.
-4. Control flow: if , if..else , switch case, while loop, for loop , do..while loop, forEach
+## Nullish coalescing operator 
+
+JavaScript nullish coalescing operator (??) that accepts two values and returns the second value if the first one is null or undefined.
+
+    //Interesting Operator - Nullish Coalescing Operator
+    console.log(null??["test"]);
+    console.log(undefined??["test"]);
+    console.log("hello"??["test"]);
+
+## Object Basics
+
+Object In js
+
+    //creating Objects
+    var myObj={
+        firstName:"shan",
+        lastName:"Micheal"
+    };
+
+    //accessing object attributes
+    console.log(myObj.firstName);
+    console.log(myObj.lastName);
+    console.log(myObj["firstName"]);
+    console.log(myObj["lastName"]);
+
+    //deleting Object attributes
+    delete myObj.lastName;
+    console.log(myObj["lastName"]);
+
+    //checking if the attribute exists.
+    console.log("firstName" in myObj);
+    console.log("lastName" in myObj);
+
+## Arrays
+
+In JavaScript, an array is an ordered list of value
+
+    var arr=["value"];
+
+    //adding values
+    arr.push("shan");
+    arr.unshift("micheal");
+
+    console.log(arr);
+
+    //removing values
+    console.log(arr.pop());
+    console.log(arr.shift());
+    console.log(arr);
+
+    //finding the index of the array value
+    var index=arr.indexOf("value");
+    console.log(index);
+
+    //check if the value is an array 
+    console.log(Array.isArray(arr));
+
 ## Functions
-
-JS uses pass by value
+ 
+Functions are used to structure the code into smaller and more reusable units.
 
 Syntax:
 
@@ -88,7 +152,8 @@ Functions without names are called as Anonymous Functions.
 
 ### Default Parameters
 
-Default Parameters are used to assign value to undefined parameters
+Default Parameters are used to assign value to undefined parameters.
+Note: it wont work for null values.
 
     // values function()
     function valueCallingWithUndefinedValue(result=10){
@@ -598,6 +663,71 @@ A promise object has a state that can be one of the following:
         console.log("finally");
 })
 
+### Promise chaining
 
+    var success=true;
+    function apiCall(){
+        return new Promise(function(resolve,reject){
+            if(success){
+                resolve(10);
+            }else{
+                reject(10);
+            }
+        });
+    }
+
+    var getPromise=apiCall();
+    getPromise.then(function(value){
+        return value*10;
+    }).then(function(value){
+        return value*10;
+    }).then(function(value){
+        console.log(value);
+    });
+
+
+    var sPromise=apiCall();
+    sPromise.then(function(value){
+        console.log(value);
+    });
+
+    sPromise.then(function(value){
+        console.log(value);
+    });
+
+    sPromise.then(function(value){
+        console.log(value);
+    });
+
+
+
+### Promise.All
+
+
+### Promise Any
+
+    function api(){
+        return new Promise(function(resolve,reject){
+            if(success){
+                resolve(10);
+            }else{
+                reject(20);
+            }
+        });
+    }
+
+    var p1=api();
+    var p2=api();
+    var p3=api();
+
+    Promise.any([p1,p2,p3]).then(function(result){
+        console.log(result);
+    });
+
+
+### Promise All Settled
+
+
+### handle execption in Promise
 
 
