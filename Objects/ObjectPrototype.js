@@ -1,3 +1,7 @@
+// Person.protype => personprototype.constructor=> person function 
+//                => personprototype.object=> object function 
+ 
+
 function Person(){
     this.firstName="firstName";
     this.lastName="lastName";

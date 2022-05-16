@@ -38,3 +38,20 @@ arr.push(p3);
 
 arr.forEach(object=>console.log(object.firstName+"__"+object.lastName));
 
+
+
+//calling function without new
+function myTest(value){
+    //if new is used to create then new.target will have new function and if its called without new then new.target will be undefined.
+    if(!new.target){
+        throw new Error("cannot call without new");
+    }
+    this.value=value;
+    this.getValue=function(){
+        return this.value;
+    }
+}
+
+var values= new myTest("hello");
+console.log(values.getValue())
+console.log(typeof(myTest.prototype.value()));

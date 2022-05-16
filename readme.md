@@ -39,7 +39,7 @@ JavaScript nullish coalescing operator (??) that accepts two values and returns 
 
 ## Object Basics
 
-Object In js
+Instance of a class.
 
     //creating Objects
     var myObj={
@@ -169,6 +169,9 @@ Note: it wont work for null values.
 ## Class and Objects
 
 Object are a key value pair with any changes will affect the current instance only
+### Object Methods
+
+An object is a collection of key/value pairs or properties. When the value is a function, the property becomes a method. Typically, you use methods to describe the object behaviors.
 
     // Object Example
     var object={
@@ -226,9 +229,33 @@ The above code is repitative , so this can be avoided by constructor functions b
 
     arr.forEach(object=>console.log(object.firstName+"__"+object.lastName));
 
+Note: when function constructor is called without using new then the values are stored to the global variable . use new.target to identify if the methods are invoked using new or not , 
+
+
+    //calling function without new
+    function myTest(value){
+        //if new is used to create then new.target will have new function and if its called without new then new.target will be undefined.
+        if(!new.target){
+            throw new Error("cannot call without new");
+        }
+        this.value=value;
+        this.getValue=function(){
+            return this.value;
+        }
+    }
+
+    var values= new myTest("hello");
+    console.log(values.getValue())
+
 ### Prototype 
 
 used to modify the attributes of a class.
+
+Behaviour:
+
+// Person.protype => personprototype.constructor=> person function 
+//                => personprototype.object=> object function 
+ 
 
     function Person(){
         this.firstName="firstName";
@@ -341,6 +368,32 @@ use the operator to check null or undefined and then use the corresponding opera
     var user=getUser(1);
     console.log(user?.firstName); //using user.firstName will give execption
 
+# Class
+
+Instead of function constructor we can use class in JS.
+
+    class Person{
+        constructor(firstName,lastName){
+            this.firstName=firstName;
+            this.lastName=lastName;
+        }
+
+        getFirstName(){
+            return this.lastName;
+        }
+
+        getLastName(){
+            return this.firstName;
+        }
+    }
+
+
+    var person=new Person("shan","Micheal");
+    console.log(person.getLastName());
+    console.log(person.getFirstName());
+
+    //must use new with Person 
+
 
 ### Inheritance 
 
@@ -379,6 +432,7 @@ Extending base class with additional metrics.
     var profession =new Profession("Developer","first","last");
     profession.printAllDetails();
 
+Note : use Instanceof  to find the type of object
 
 ### Static Method 
 
@@ -458,6 +512,8 @@ ES2022 allows you to define private fields for a class. To define a private fiel
     }
 
 ## Advanced Function
+
+In JavaScript, all functions are objects. They are the instances of the Function type. Because functions are objects, they have properties and methods like other objects.
 
 
 ### call function
