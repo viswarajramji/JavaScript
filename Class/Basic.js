@@ -17,5 +17,5 @@ class Person{
 var person=new Person("shan","Micheal");
 console.log(person.getLastName());
 console.log(person.getFirstName());
-
-//must use Person 
+console.log(typeof(Person));
+//must use new with Person 

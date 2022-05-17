@@ -33,9 +33,9 @@ How to run JS code without HTML.
 JavaScript nullish coalescing operator (??) that accepts two values and returns the second value if the first one is null or undefined.
 
     //Interesting Operator - Nullish Coalescing Operator
-    console.log(null??["test"]);
-    console.log(undefined??["test"]);
-    console.log("hello"??["test"]);
+    console.log(null??["test"]); // ["test"]
+    console.log(undefined??["test"]); // ["test"]
+    console.log("hello"??["test"]);//"hello"
 
 ## Object Basics
 
@@ -104,6 +104,32 @@ Example:
     var result=test(10,15);
     console.log(result);
 
+### Sorting an Array
+
+    //sorting
+    function sortByProperty(propertyName) {
+        return function (a, b) {
+            var value1 = a[propertyName];
+            var value2 = b[propertyName];
+            if (value1 > value2) {
+                return 1;
+            }
+            return -1;
+        }
+    }
+
+    var arr = [{
+        name: "micheal",
+        age: 15
+    }, {
+        name: "shan",
+        age: 10
+    }
+    ]
+
+    console.log(arr);
+    arr.sort(sortByProperty("age"));
+    console.log(arr);
 ### Function As Variable
 
 Javascript allows to assign function to a variable and use it like a normal variable passing as a parameter to another function or invoking the function from the variable directly
@@ -480,7 +506,7 @@ ES2022 allows you to define private fields for a class. To define a private fiel
         }
     }
 
-# Private & Static Method
+### Private & Static Method
 
     class Person{
         #firstName;
@@ -515,6 +541,7 @@ ES2022 allows you to define private fields for a class. To define a private fiel
 
 In JavaScript, all functions are objects. They are the instances of the Function type. Because functions are objects, they have properties and methods like other objects.
 
+Note: difference between call / apply and bind => call and apply will immediately execute the function, the bind will give a new function.
 
 ### call function
 
@@ -608,8 +635,11 @@ A self invoking function can be executed by itself
 
     console.log(result);
 
-
 ### Arrow function
+
+Some of the useful arrow functions:
+1. map() => converts values to array
+2. filter()=>filters values
 
 syntax:  () = > expression (ie) return expression
 
