@@ -333,6 +333,10 @@ enumerable - will be ignore during enumeration or iterator if set to true
 Writable - will not be allowed to be modified is set to yes
 value - value of property
 
+//Note:
+
+Check if an object has a property enumerable:  object.propertyIsEnumerable(propertyName);
+Check if the object property is from the current object or another object : object.hasOwnProperty(propertyName);
 ### In Loop
 
     var object={
@@ -356,7 +360,7 @@ value - value of property
 
 ### Object Assign
 
-Merges values and creates a new values
+Merges values and creates a new values also it perform shallow copy only.
 
     var sourceObj1={
         firstName:"firstName",
