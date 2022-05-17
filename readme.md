@@ -360,7 +360,7 @@ Check if the object property is from the current object or another object : obje
 
 ### Object Assign
 
-Merges values and creates a new values also it perform shallow copy only.
+Merges values and creates a new values also it perform shallow copy
 
     var sourceObj1={
         firstName:"firstName",
@@ -698,7 +698,7 @@ Call back function are function that are passed as parameters and are invoked.
 
     processNumber([1,2,3,4,5,6,7,8,9],even,odd);
 
-### Promise Functions
+## Promise
 
 a promise is an object that encapsulates the result of an asynchronous operation.
 
@@ -707,6 +707,7 @@ A promise object has a state that can be one of the following:
     Pending
     Fulfilled with a value
     Rejected for a reason
+### why promise
 
     //Reason on to use Promise
 
@@ -719,20 +720,6 @@ A promise object has a state that can be one of the following:
     }
 
     console.log(getUsers());  //print []
-
-    function getValues(callback){
-        setTimeout(()=>{
-            arr=[1,2,2,4];
-            callback(arr)
-        },1000);
-    }
-
-    function printValue(arr){
-        arr.forEach(element => {
-            console.log(element);
-        });
-    }
-    getValues(printValue); 
 
     //using promise
     function getPromiseValues(){
@@ -754,6 +741,8 @@ A promise object has a state that can be one of the following:
 })
 
 ### Promise chaining
+
+Series of promise executions are called as Promise Chaining.
 
     var success=true;
     function apiCall(){
@@ -789,9 +778,104 @@ A promise object has a state that can be one of the following:
         console.log(value);
     });
 
-
-
 ### Promise.All
+
+When all the promise succeeds then the then function is called else the catch function is called.
+
+    //All pass use case
+    // output 10,100,1000
+
+    function restCall1(){
+        return new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log("calling rest api 2");
+                resolve(10);
+            },1000);
+        });
+    }
+
+
+    function restCall2(){
+        return new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log("calling rest api 2");
+                resolve(100);
+            },1000);
+        });
+    }
+
+
+
+    function restCall3(){
+        return new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log("calling rest api 3");
+                resolve(1000);
+            },1000);
+        });
+    }
+
+
+var p1=restCall1();
+var p2=restCall2();
+var p3=restCall3();
+
+Promise.all([p1,p2,p3]).then(function(values){
+	values.forEach((value)=>console.log(value));
+}).catch(function(err){
+	console.log(err);
+});
+
+
+    //one rejected use case 
+    //output -1000
+
+    function restCall1(){
+        return new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log("calling rest api 2");
+                resolve(10);
+            },1000);
+        });
+    }
+
+
+    function restCall2(){
+        return new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log("calling rest api 2");
+                resolve(100);
+            },1000);
+        });
+    }
+
+
+
+    function restCall3(){
+        return new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log("calling rest api 3");
+                reject(1000);
+            },1000);
+        });
+    }
+
+
+    var p1=restCall1();
+    var p2=restCall2();
+    var p3=restCall3();
+
+    Promise.all([p1,p2,p3]).then(function(values){
+        values.forEach((value)=>console.log(value));
+    }).catch(function(err){
+        console.log(err);
+    })
+
+
+
+
+
+
 
 
 ### Promise Any
