@@ -1,4 +1,4 @@
-# Javascript (In-Progress)
+# Javascript
 
 This repo contains important sample and examples of javascript.
 
