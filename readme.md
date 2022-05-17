@@ -816,15 +816,15 @@ When all the promise succeeds then the then function is called else the catch fu
     }
 
 
-var p1=restCall1();
-var p2=restCall2();
-var p3=restCall3();
+    var p1=restCall1();
+    var p2=restCall2();
+    var p3=restCall3();
 
-Promise.all([p1,p2,p3]).then(function(values){
-	values.forEach((value)=>console.log(value));
-}).catch(function(err){
-	console.log(err);
-});
+    Promise.all([p1,p2,p3]).then(function(values){
+        values.forEach((value)=>console.log(value));
+    }).catch(function(err){
+        console.log(err);
+    });
 
 
     //one rejected use case 
@@ -870,12 +870,6 @@ Promise.all([p1,p2,p3]).then(function(values){
     }).catch(function(err){
         console.log(err);
     })
-
-
-
-
-
-
 
 
 ### Promise Any
