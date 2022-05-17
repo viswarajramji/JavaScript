@@ -780,7 +780,7 @@ Series of promise executions are called as Promise Chaining.
 
 ### Promise.All
 
-When all the promise succeeds then the then function is called else the catch function is called.
+When all the promise succeeds then the then function is called with all the resolved values else the catch function is called with the failure value only.
 
     //All pass use case
     // output 10,100,1000
