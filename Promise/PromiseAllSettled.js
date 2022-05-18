@@ -1,20 +1,42 @@
-function api(){
-    return new Promise(function(resolve,reject){
-        if(false){
-            resolve(10);
-        }else{
-            reject(20);
-        }
-    });
+function restCall1(){
+	return new Promise(function(resolve,reject){
+		setTimeout(function(){
+			console.log("calling rest api 2");
+			reject(10);
+		},1000);
+	});
 }
 
-var p1=api();
-var p2=api();
-var p3=api();
 
-Promise.allSettled([p1,p2,p3]).then(function(result){
-    console.log(result);
+function restCall2(){
+	return new Promise(function(resolve,reject){
+		setTimeout(function(){
+			console.log("calling rest api 2");
+			reject(100);
+		},1000);
+	});
+}
+
+
+
+function restCall3(){
+	return new Promise(function(resolve,reject){
+		setTimeout(function(){
+			console.log("calling rest api 3");
+			resolve(1000);
+		},1000);
+	});
+}
+
+
+var p1=restCall1();
+var p2=restCall2();
+var p3=restCall3();
+
+Promise.allSettled([p1,p2,p3]).then(function(values){
+	 console.log(values);
 });
+
 
 
 
