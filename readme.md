@@ -1018,3 +1018,21 @@ Reject and execption will be handled by the catch.
         console.log(err);
     });
 
+## Exceptions
+
+the JavaScript engine encounters an error, it issues that error and immediately terminates the execution of the entire script. Sometimes, you want to handle the error and continue the execution. To do that, you use the try...catch
+
+### Try..catch
+
+    function result(a,b){
+        try{
+        return test();
+        }catch(ex){
+            console.log("Exception occured",ex)
+        }
+    }
+
+    var value=result();
+    console.log(value);
+
+
