@@ -1060,7 +1060,6 @@ Note:
 * the throw new Error -> will provide or give all the stacktrace.
 * the throw messsage -> will not provide the stacktrace.
 
-
     function result1(value){
         if(value==null){
             throw new Error("execption occured value is empty");
@@ -1076,7 +1075,6 @@ Note:
     }
 
     //result of the above one
-
     // Error: execption occured value is empty
     //     at result1 (/Users/I533804/Desktop/personal/Learning/Javascript/Execption/ThrowExceptions.js:3:15)
     //     at Object.<anonymous> (/Users/I533804/Desktop/personal/Learning/Javascript/Execption/ThrowExceptions.js:8:17)
