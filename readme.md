@@ -1061,6 +1061,7 @@ Note:
 * the throw new Error -> will provide or give all the stacktrace.
 * the throw messsage -> will not provide the stacktrace.
 
+
     function result1(value){
         if(value==null){
             throw new Error("execption occured value is empty");
@@ -1104,3 +1105,25 @@ Note:
 //result of the above one
 // execption occured value is empty
 // execution completed
+
+### Custom Error
+
+JS allows users to create their own type of execption.
+
+    class CustomExecption extends Error{
+        constructor(value){
+            super(value);
+            this.value=value;
+        }
+    }
+
+    function process(){
+        throw new CustomExecption("test");
+    }
+    try{
+        process();
+    }catch(err){
+        console.log(err);
+    }finally{
+        
+    }
