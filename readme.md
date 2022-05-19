@@ -1200,6 +1200,10 @@ Map: Key vs Value pair
         console.log(value[0]+"__"+value[1]);
     }
 
+    //check if the key exists.
+    console.log("Has value")
+    console.log(map.has("name"));
+
     //Delete operation
     //delete(key)
     console.log(map.delete("name"));
@@ -1209,19 +1213,52 @@ Map: Key vs Value pair
     map.clear();
     console.log(map.get("test"));
 
+### Set Operation
+
+set operation , used to store unique values
+
+    //syntax:
+
+    // var set=new Set([iterator]);
+
+    //create set
+    var set=new Set();
+    set.add(1);
+    set.add(2);
+    set.add(1);
+    console.log(set.size);
+    console.log(set)
 
 
+    //reading from set
+    // forEach
+    set.forEach(console.log)
 
-## JS Code Execution Behaviour
+    //entries
 
+    for(const value of set){
+        console.log(value);
+    }
+
+    //check if the value exists.
+
+    console.log(set.has(2));//true
+    console.log(set.has(3));//false
+
+
+    //delete opration
+    set.delete(2);
+    console.log(set);
+    set.clear();
+    console.log(set);
 
 
 ## Event Looping
-
 
 Notes:
 
 For performing async operation : Js uses Event loop concept.
 Blocking function: interaction is stopped in the UI and this happens because of long running process.
+Basically, JS execute on line at a time and for async execution are handled execution from call queue / task queue to call stack. 
 
 

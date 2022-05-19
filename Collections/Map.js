@@ -32,6 +32,10 @@ for(var value of map.entries()){
     console.log(value[0]+"__"+value[1]);
 }
 
+//check if the key exists.
+console.log("Has value")
+console.log(map.has("name"));
+
 //Delete operation
 //delete(key)
 console.log(map.delete("name"));
@@ -40,3 +44,4 @@ console.log(map.get("name"));
 //clear - clears all the data
 map.clear();
 console.log(map.get("test"));
+
