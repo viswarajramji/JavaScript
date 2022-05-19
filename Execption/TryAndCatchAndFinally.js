@@ -13,4 +13,4 @@ function result(){
 }
 
 var value=result();
-console.log(value)
+console.log(`"print value ${value}"`);
