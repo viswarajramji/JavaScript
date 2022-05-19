@@ -1001,7 +1001,6 @@ The promise will be triggered once all the executions happens without any fail.
         console.log(values);
     });
 
-
 ### handle execption in Promise
 
 Reject and execption will be handled by the catch.
